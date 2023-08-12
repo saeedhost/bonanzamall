@@ -1,0 +1,88 @@
+body{
+    margin-top:20px;
+    background-color:#eee;
+}
+
+.card {
+    box-shadow: 0 20px 27px 0 rgb(0 0 0 / 5%);
+}
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0 solid rgba(0,0,0,.125);
+    border-radius: 1rem;
+    background-image: url(/static/img/bg-logo.png); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+@media (max-width: 576px) {
+    .card {
+      background-image: none; /* Remove the background image on small screens */
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 1rem;
+      box-shadow: 0 20px 27px 0 rgb(0 0 0 / 5%);
+    }
+    
+    .invoice-title h4 {
+      font-size: 12px; /* Decrease the font size of the invoice title */
+    }
+    
+    .invoice-title .badge {
+      font-size: 10px; /* Decrease the font size of the badge */
+      margin-left: 5px; /* Add some spacing to the badge */
+    }
+    
+    .mb-4 h2 {
+      font-size: 18px; /* Decrease the font size of the mall name */
+    }
+    
+    .text-muted p {
+      font-size: 12px; /* Decrease the font size of the contact information */
+    }
+    
+    .font-size-16 {
+      font-size: 14px; /* Decrease the font size of the billed to title */
+    }
+    
+    .font-size-15 {
+      font-size: 12px; /* Decrease the font size of the billed to name */
+    }
+    
+    .mb-1, .mb-2 {
+      font-size: 10px; /* Decrease the font size of the addresses and email */
+    }
+    
+    .py-2 h5 {
+      font-size: 12px; /* Decrease the font size of the order summary title */
+    }
+    
+    .table th, .table td {
+      padding: 0.5rem; /* Decrease the padding of table cells */
+      font-size: 10px; /* Decrease the font size of table headers and cells */
+    }
+    
+    .text-end {
+      text-align: right; /* Align the text to the right in table cells */
+    }
+    
+    .text-end h4 {
+      font-size: 14px; /* Decrease the font size of the total price */
+    }
+    
+    .d-print-none .float-end {
+      text-align: right; /* Align the buttons to the right */
+    }
+    
+    .d-print-none .btn {
+      font-size: 10px; /* Decrease the font size of the buttons */
+      margin-right: 5px; /* Add some spacing between the buttons */
+    }
+  }

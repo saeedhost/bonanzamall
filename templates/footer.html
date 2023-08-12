@@ -1,0 +1,75 @@
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-secondary">
+        <div class="row px-xl-5 pt-5">
+            <div class="col-lg-6 col-md-12 mb-5 pr-3 pr-xl-5">
+                <h5 class="text-secondary text-uppercase mb-4">Get In Touch</h5>
+                <p class="mb-4">Bonanza Mall is an ecommerce platform that offers a wide range of products at affordable prices with quick delivery. Shop with ease and enjoy great discounts on various products.</p>
+                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>District Dera Ismail Khan, KPK Pakistan</p>
+                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>support@bonanzamall.net</p>
+                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+92 348 6548016</p>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="row">
+                    <div class="col-md-12 mb-5">
+                        <h5 class="text-secondary text-uppercase mb-4">Newsletter</h5>
+                        <p>Shop affordable products with quick delivery at Bonanza Mall - Your ultimate ecommerce destination!</p>
+                        <form action="">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Your Email Address" disabled>
+                                <div class="input-group-append">
+                                    <a class="btn btn-primary" href="{% url 'userReg' %}">Sign Up</a>
+                                </div>
+                            </div>
+                        </form>
+                        <h6 class="text-secondary text-uppercase mt-4 mb-3">Follow Us</h6>
+                        <div class="d-flex">
+                            <a class="btn btn-primary btn-square mr-2" href="https://twitter.com/mr_saeed01"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-primary btn-square mr-2" href="https://www.facebook.com/profile.php?id=100008111469325"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-primary btn-square mr-2" href="https://www.linkedin.com/in/muhammad-saeed-503841269"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-primary btn-square" href="https://www.instagram.com/saeed._.tech"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row border-top mx-xl-5 py-4" style="border-color: rgba(256, 256, 256, .1) !important;">
+            <div class="col-md-6 px-xl-0">
+                <p class="mb-md-0 text-center text-md-left text-secondary">
+                    &copy; <a class="text-primary" href="{% url 'Home' %}">bonanzamall.net</a> all rights reserved. Developed
+                    by
+                    <a class="text-primary" href="https://saeedwebcom.github.io/">Muhammad Saeed</a>
+                </p>
+            </div>
+            <div class="col-md-6 px-xl-0 text-center text-md-right">
+                <img class="img-fluid" src="/static/img/payments.png" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/lib/easing/easing.min.js"></script>
+    <script src="/static/lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="/static/mail/jqBootstrapValidation.min.js"></script>
+    <script src="/static/mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="/static/js/main.js"></script>
+    <script>
+        var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        var totalItems = cartItems.length; // Count the number of items
+        document.getElementById('total_items').textContent =  totalItems;
+    </script>
+</body>
+
+</html>

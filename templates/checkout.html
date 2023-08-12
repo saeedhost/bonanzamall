@@ -1,0 +1,197 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    /* Hide the input element */
+    input[name="savingTotalPrice"], input[name="itemSavingName"], input[name="itemSavingQty"] {
+      display: none;
+    }
+  </style>
+  
+    <!-- Breadcrumb Start -->
+    <div class="container-fluid">
+        <div class="row px-xl-5">
+            <div class="col-12">
+                <nav class="breadcrumb bg-light mb-30">
+                    <a class="breadcrumb-item text-dark" href="#">Home</a>
+                    <a class="breadcrumb-item text-dark" href="#">Shop</a>
+                    <span class="breadcrumb-item active">Checkout</span>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+    
+
+    <!-- Checkout Start -->
+    <div class="container-fluid">
+        <div class="row px-xl-5">
+            <form action="{% url 'SaveBilling' %}" method="post">
+                {% csrf_token %}
+                <div class="col-lg-12">
+                    <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Billing Address</span></h5>
+                    {% for message in messages %}
+                        <span class="alert alert-success text-dark py-2">{{ message }} <a href="{% url 'OrdersHistory' %}" class="text-danger ml-3" style="text-decoration: underline;"> Click to View </a> </span>
+                    {% endfor %}
+                    <div class="bg-light p-30 mb-5">
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <label>Full Name</label>
+                                <input class="form-control" name="c_name" type="text" placeholder="John" maxlength="50" required>
+                            </div>
+
+                            <div class="col-md-6 form-group">
+                                <label>E-mail</label>
+                                <input class="form-control" name="c_email" type="email" placeholder="example@email.com" maxlength="50" required>
+                            </div>
+
+                            <div class="col-md-6 form-group">
+                                <label>Province صوبہ</label>
+                                <select class="custom-select" name="c_province" required>
+                                    <option value="Balochistan">Balochistan</option>
+                                    <option value="Gilgit-Baltistan">Gilgit-Baltistan</option>
+                                    <option value="Islamabad Capital Territory">Islamabad Capital Territory</option>
+                                    <option value="Khyber Pakhtunkhwa">Khyber Pakhtunkhwa</option>
+                                    <option value="Punjab">Punjab</option>
+                                    <option value="Sindh">Sindh</option>
+                                </select>
+                            </div>
+                            
+
+                            <div class="col-md-6 form-group">
+                                <label>District ضلع</label>
+                                <select class="custom-select" name="c_district" required>
+                                    <option value="Abbottabad">Abbottabad</option>
+                                    <option value="Attock">Attock</option>
+                                    <option value="Bahawalpur">Bahawalpur</option>
+                                    <option value="Bannu">Bannu</option>
+                                    <option value="Bhakkar">Bhakkar</option>
+                                    <option value="Buner">Buner</option>
+                                    <option value="Chakwal">Chakwal</option>
+                                    <option value="Charsadda">Charsadda</option>
+                                    <option value="Chitral">Chitral</option>
+                                    <option value="Dera Ghazi Khan">Dera Ghazi Khan</option>
+                                    <option value="Dera Ismail Khan">Dera Ismail Khan</option>
+                                    <option value="Faisalabad">Faisalabad</option>
+                                    <option value="Gilgit">Gilgit</option>
+                                    <option value="Gujranwala">Gujranwala</option>
+                                    <option value="Haripur">Haripur</option>
+                                    <option value="Hyderabad">Hyderabad</option>
+                                    <option value="Islamabad">Islamabad</option>
+                                    <option value="Jhang">Jhang</option>
+                                    <option value="Jhelum">Jhelum</option>
+                                    <option value="Kasur">Kasur</option>
+                                    <option value="Khanewal">Khanewal</option>
+                                    <option value="Kohat">Kohat</option>
+                                    <option value="Lahore">Lahore</option>
+                                    <option value="Lakki Marwat">Lakki Marwat</option>
+                                    <option value="Malakand">Malakand</option>
+                                    <option value="Mandi Bahauddin">Mandi Bahauddin</option>
+                                    <option value="Mansehra">Mansehra</option>
+                                    <option value="Mardan">Mardan</option>
+                                    <option value="Mianwali">Mianwali</option>
+                                    <option value="Multan">Multan</option>
+                                    <option value="Narowal">Narowal</option>
+                                    <option value="Nowshera">Nowshera</option>
+                                    <option value="Peshawar">Peshawar</option>
+                                    <option value="Rahim Yar Khan">Rahim Yar Khan</option>
+                                    <option value="Rawalpindi">Rawalpindi</option>
+                                    <option value="Sahiwal">Sahiwal</option>
+                                    <option value="Sargodha">Sargodha</option>
+                                    <option value="Shangla">Shangla</option>
+                                    <option value="Sheikhupura">Sheikhupura</option>
+                                    <option value="Sialkot">Sialkot</option>
+                                    <option value="Sibi">Sibi</option>
+                                    <option value="Sujawal">Sujawal</option>
+                                    <option value="Sukkur">Sukkur</option>
+                                    <option value="Swabi">Swabi</option>
+                                    <option value="Swat">Swat</option>
+                                    <option value="Upper Dir">Upper Dir</option>
+                                    <option value="Vehari">Vehari</option>
+                                </select>
+                            </div>
+                            
+                            <div class="col-md-6 form-group">
+                                <label>Mobile No</label>
+                                <input class="form-control" name="c_number" type="text" placeholder="03xxxxxxxxx" minlength="11" maxlength="11" required>
+                            </div>
+                            
+                            <div class="col-md-6 form-group">
+                                <label>Complete Address</label>
+                                <input class="form-control" name="c_address" type="text" placeholder="Your Address here" maxlength="55" required>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <div class="row px-xl-5">
+                <div class="col-lg-6">
+                    <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Order Total</span></h5>
+                    <div class="bg-light p-30 mb-5">
+                        <div class="border-bottom">
+                            <h6 class="mb-3 ml-5">Products</h6>
+                            <table class="table table-borderless">
+                                <tbody>
+                                    <script>
+                                        var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+                                        var totalPrice = 0;
+                                        
+                                        for (var i = 0; i < cartItems.length; i++) {
+                                            var item = cartItems[i];
+                                            document.write('<tr>');
+                                            document.write('<td>' + item.name + '</td>');
+                                            document.write('<td>Rs. ' + item.total + '</td>');
+                                            document.write('</tr>');
+                                            totalPrice += item.total;
+                                            document.write('<input type="text" name="itemSavingName" value="' + item.name + '" type="hidden"/>');
+                                            document.write('<input type="text" name="itemSavingQty" value="' + item.quantity + '" type="hidden"/>');
+                                            document.write('<input type="hidden" name="savingTotalPrice" value="' + item.total + '"/>');
+                                        }
+
+                                        document.write('<tr>');
+                                        document.write('<td><strong>Total</strong></td>');
+                                        document.write('<td>Rs. ' + totalPrice + '</td>');
+                                        document.write('</tr>');
+
+                                      </script>         
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="mb-5">
+                        <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Payment</span></h5>
+                        <div class="bg-light p-30">
+                            <div class="form-group">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" class="custom-control-input" name="payment" id="paypal">
+                                    <label class="custom-control-label" for="paypal">Paypal</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" class="custom-control-input" name="payment" id="directcheck">
+                                    <label class="custom-control-label" for="directcheck">Direct Check</label>
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" class="custom-control-input" name="payment" id="banktransfer">
+                                    <label class="custom-control-label" for="banktransfer">Bank Transfer</label>
+                                </div>
+                            </div>
+                            <input class="btn btn-block btn-primary font-weight-bold py-3" type="submit"/>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Checkout End -->
+
+    {% endblock %}

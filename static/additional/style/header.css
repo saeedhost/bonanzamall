@@ -1,0 +1,35 @@
+.select option:checked {
+    background-color: yellow;
+}
+.top-right {
+    position: absolute;
+    top: -3px;
+    right: 20px;
+}
+.gradient-custom {
+    background: -webkit-linear-gradient(to right bottom, rgba(246, 211, 101, 1), orange);
+    background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), orange)
+}
+
+
+.product-container {
+    display: flex;
+    align-items: center;
+}
+
+.product-link {
+    margin-right: 10px; /* Adjust the margin as needed */
+    text-decoration: none;
+    border: 1px solid orange;
+    border-radius: 15px;
+    display: inline-block;
+}
+
+.product-image {
+    display: block;
+    width: 80px;
+    height: 50px;
+}
+
+
+
